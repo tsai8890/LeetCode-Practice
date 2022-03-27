@@ -20,7 +20,6 @@ using namespace std;
     Memory: 10.6 MB  -- beat 14.82%
 */
 
-
 class Solution {
 public:
     int lengthOfLIS(vector<int>& nums) {
