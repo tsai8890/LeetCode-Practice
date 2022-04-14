@@ -1,9 +1,8 @@
 #include <vector>
-#include <algorithm>
 using namespace std;
 
 /*
-    Title: 322. Coin Change
+    Title: 518. Coin Change 2
     Time Complexity: O(n x amount)
     Space Complexity: O(amount)-extra space
 
@@ -14,7 +13,7 @@ using namespace std;
         1. 很猛的手法，類背包問題都可以這樣降低時間複雜度
             
         2.  dp[i]: amount為i時，總共的組合數
-            i.   for i in [0..n-1]
+            i.   for i in [0..n-1]:
                      計算以coins[i]為結尾的所有組合
                      更新dp[1]..dp[amount]
             ii.  base case: dp[0] = 1
@@ -25,30 +24,22 @@ using namespace std;
         
         4. 每次寫到二維/三維dp時，可以試著想一下有沒有辦法只使用一維/二維(時間複雜度有可能一樣)
         
-    Date: 04/14/2022 09:54									
-    Time: 79 ms  -- beat 81.90%    
-    Memory: 14.5 MB  -- beat 53.28% 
+    Date: 04/14/2022 09:18								
+    Time: 15 ms  -- beat 78.04%    
+    Memory: 7.2 MB  -- beat 86.69% 
 */
-
 class Solution {
 public:
-    int coinChange(vector<int>& coins, int amount) {
+    int change(int amount, vector<int>& coins) {
         int n = coins.size();
-        int MAX = 100001;
-        vector<int> dp(amount+1, MAX);
-        dp[0] = 0;
+        vector<int> dp(amount+1, 0);
+        dp[0] = 1;
         
         for (int i = 0; i < n; i ++) {
             for (int j = coins[i]; j <= amount; j ++) {
-                dp[j] = min(dp[j], dp[j-coins[i]]+1);
+                dp[j] += dp[j - coins[i]];
             }
         }
-        
-        if (dp[amount] == MAX) {
-            return -1;
-        }  
-        else {
-            return dp[amount];
-        }
+        return dp[amount];
     }
 };
