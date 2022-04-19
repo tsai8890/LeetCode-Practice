@@ -28,6 +28,7 @@ using namespace std;
     Time: 15 ms  -- beat 78.04%    
     Memory: 7.2 MB  -- beat 86.69% 
 */
+
 class Solution {
 public:
     int change(int amount, vector<int>& coins) {
