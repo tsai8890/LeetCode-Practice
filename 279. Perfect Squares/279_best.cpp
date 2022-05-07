@@ -16,7 +16,7 @@ using namespace std;
         2. dp[i]: amount為i時，最小的組合長度
             i.   for j in [1..sqrt(i)]:
                     計算以j^2為結尾的所有組合
-                    更新dp[i] 
+                    更新dp[i]  
             ii.  base case: dp[0] = 0
         
     Date: 04/20/2022 11:05										
