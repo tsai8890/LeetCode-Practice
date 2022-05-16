@@ -11,7 +11,7 @@ using namespace std;
         
     Note:
         1. dp[i]: 在[0, 10^i)中，所有符合條件(unique digits)的數字個數
-        
+
         2. DP Transition:
             i. 將dp[i]分為兩個部分討論，最高位是不是0 / 最高位是0
                 a. 最高位是0，則等同於dp[i-1]
