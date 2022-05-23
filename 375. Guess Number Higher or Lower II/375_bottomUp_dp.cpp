@@ -11,6 +11,7 @@ using namespace std;
 
     Algorithm: 
         1. Dynamic Programming (Bottom-Up)
+        2. Minimax Search
         
     Note:
         1. 這題想問的是最少需要花多少錢才能猜中數字，其實隱含的意思是
