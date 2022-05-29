@@ -3,7 +3,7 @@ using namespace std;
 
 /*
     Title: 95. Unique Binary Search Trees II
-    Time Complexity: O(4^n / (n^(3/2)))
+    Time Complexity: O(n x (n! + C(n)))
     Space Complexity: O(4^n / sqrt(n))-extra space
 
     Algorithm: 
@@ -17,8 +17,20 @@ using namespace std;
            Catalan Number(n) = (2n!) / {n! x (n+1)!}
                              ~= 4^n / (n^(3/2) x sqrt(pi))
 
-           And the complexity of this solution is dominated by
-           the count of BST(n), which is O(4^n)
+        3. Time Complexity Analysis: 
+            C(n) = Catalan Number(n)
+            T(n) = T(1) + T(n-2) + T(2) + T(n-3) + ... + T(n-2) + T(1) + theta(n) + C(n)
+            
+            Consider with no C(n), T(n) = O(n x n!)
+            After adding C(n), there are two cases (In fact, I don't know), 
+                If C(n) = theta(C(1)+C(n-2) + C(2)+C(n-3) + C(3)+C(n-4) + ... + C(n-2)+C(1)),
+                   then T(n) = O(n x n! + n x C(n))
+                
+                Otherwise, it C(n) = little omega(C(1)+C(n-2) + C(2)+C(n-3) + C(3)+C(n-4) + ... + C(n-2)+C(1)),
+                   then T(n) = O(n x n! + C(n)) 
+
+            As a result, we can say that T(n) = O(n x (n! + C(n))), 
+            even if there could be a tighter bound.
 
     Date: 04/22/2022 15:28									
     Time: 15 ms  -- beat 88.72%    
