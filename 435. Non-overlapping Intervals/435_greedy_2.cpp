@@ -2,7 +2,6 @@
 #include <vector>
 using namespace std;
 
-
 /*
     Title: 435. Non-overlapping Intervals
     Time Complexity: O(nlogn) 
