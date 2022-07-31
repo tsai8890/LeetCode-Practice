@@ -71,3 +71,95 @@
 - 其它
     - size()
     - empty()
+
+## std::unordered_map
+- 宣告方法
+```C++=
+std::unordered_map<KEY_T, VALUE_T> uMap; 
+```
+
+- 用法
+    - 查找
+        - find(KEY_T key)
+            - 找到就回傳該位置的 iterator
+            - 找不到回傳 uMap.end()
+
+    
+    - 遍歷
+        - 使用 pair 遍歷
+        ```C++=
+            // Basic
+            // Note: 不可以加 "&"，會出錯
+            for (pair<KEY_T, VALUE_T> e: uMap) {
+                cout << e.first;  // Key
+                cout << e.second; // Value
+            }
+            
+            // Lazy
+            // Note: 不可以加 "&"，會出錯
+            for (auto e: uMap) {
+                cout << e.first;  // Key
+                cout << e.second; // Value
+            }
+        ``` 
+
+        - 使用 iterator 遍歷
+        ```C++=
+            // Basic - forLoop
+            unordered_map<KEY_T< VALUE_T>>::iterator it;
+            // 其實 "*it" 就是 pair<KEY_T, VALUE_T>
+
+            for (it = uMap.begin(); it != uMap.end(); it ++) {
+                cout << it->first; // Key
+                cout << it->second; // Value
+            }
+
+            // Basic - whileLoop
+            unordered_map<KEY_T< VALUE_T>>::iterator it;
+            it = uMap.begin();
+            while (it != uMap.end()) {
+                cout << it->first; // Key
+                cout << it->second; // Value
+                it ++;
+            }
+        ``` 
+
+## std::priority_queue
+- 引入函式庫
+```
+#include <queue>
+// 沒有 <priority_queue>
+```
+
+- 宣告方法
+```C++=
+// Most Important
+// C++ 的 priority queue 比較函數定義是反過來的
+
+// Min-Heap
+priority_queue<T, vector<T>, greater<T>> pq; 
+
+// Max-Heap
+priority_queue<T, vector<T>, less<T>> pq; 
+
+// 客製化比較函式
+class Compare {
+public:
+    bool operator() (const T& t1, const T& t2) {
+        return t1.val < t2.val;
+    }
+}
+priority_queue<T, vector<T>, Compare> pq; 
+```
+
+- 用法
+    - 新增 / 刪除
+        - push()
+        - pop()
+    
+    - 存取
+        - top()
+    
+    - 其它
+        - size()
+        - empty()
