@@ -60,17 +60,23 @@
     
         - 單調隊列在將元素移出 sliding window 的時候有兩種做法
             1. 記錄單調隊列每個元素在原本 vector 的 index
-                - 239_1.cpp 是這樣做的
                 - 需要多使用一個 deque 存 index
             
             2. 透過比對 單調隊列.front() 與 nums[i-k]
-                - 239_2.cpp 是這樣做的
-                    - 一樣就 pop，反之就不 pop
-                    - 這種作法更有效率，很聰明
+                - 一樣就 pop，反之就不 pop
+                   - 這種作法更有效率，很聰明
 
                 - 重要的事
                     - 這種作法要調整 pop 的條件，只有在 push_element 大於(沒有等於) deque
                       頂端時才會把 deque 頂端 pop 出來，否則會出錯。
+
+    - Solutions
+        - 239_1.cpp
+            - 記錄單調隊列每個元素在原本 vector 的 index
+                - 需要多使用一個 deque 記錄 index
+             
+        - 239_2.cpp
+            - 透過比對 單調隊列.front() 與 nums[i-k]
 
 - 347. Top K Frequent Elements
     - Resource Analysis
