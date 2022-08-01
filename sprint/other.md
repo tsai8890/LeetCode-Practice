@@ -1,5 +1,10 @@
 # C++ 小知識
 
+## 乘以 2 的冪次
+- 直接使用
+```C++=
+x = x << times;
+```
 ## reverse()
 - 這個 function 可以反轉任何有迭代器的序列，包含 string, vector, ...
 - 用法: reverse(X.begin(), X.end())

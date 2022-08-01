@@ -80,6 +80,7 @@
 ## std::pair
 - 宣告方法
 ```C++=
+#include <utility> // 包含 std::pair, std::make_pair
 pair<T1, T2> p;
 ```
 
@@ -88,6 +89,9 @@ pair<T1, T2> p;
         - pair.first: 回傳第一個元素
         - pair.second: 回傳第二個元素
 
+- 其它 
+    - std::make_pair(A, B): 回傳一個建構好的 pair
+ 
 ## std::unordered_map
 - 宣告方法
 ```C++=
