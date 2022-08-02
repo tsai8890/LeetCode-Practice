@@ -24,8 +24,13 @@
 - Monotonic Queue (單調隊列)
     - LC 239. Sliding Window Maximum
 
-- Monotonic Stack (單調棧)
-    - LC 739. Daily Temperatures
+- Monotonic Stack (單調棧): 「下一個較大/較小元素」， 
+    - 下一個較大/較小元素
+        - LC 739. Daily Temperatures
+        - LC 496. Next Greater Element I
+        - LC 503. Next Greater Element II
+        - LC 901. Online Stock Span
+        - LC 42. Trapping Rain Water
 
 - Priority Queue
     - LC 347. Top K Frequent Elements
@@ -250,3 +255,131 @@
               這就是核心精神。
 
         - 時間複雜度是線性的，空間複雜度會少一倍(少了 stack)
+
+### LC 496. Next Greater Element I
+- Resource Analysis
+    - Time: O(N)
+    - Space: O(N)
+  
+- Tips
+    - 先用 hashTable 儲存 nums2 各個數字的位置
+        - 接下來就是解 LC 739. Daily Temperatures
+            - 一樣有兩種作法
+                - Stack 
+                    - 使用 Monotonic Stack
+                - DP
+    
+    - 如果使用 stack，要記得裡面存的是 index 還是 nums[index]，不然很容易
+      有意想不到的小 bug 出現
+
+- Solutions
+    - 496_1.cpp
+        - 使用 stack 來解   
+            - 會多使用 stack 的空間
+
+    - 496_2.cpp
+        - 使用 DP 來解
+            - 空間複雜度少一倍
+
+### LC 503. Next Greater Element II
+- Resource Analysis
+    - Time: O(N)
+    - Space: O(N)
+
+- Tips
+    - 維護一個遞減的單調棧
+        - 把原本的 array 複製一遍，就可以解 circular 的問題了
+        - 剩下的就是解 LC 739. Daily Temperatures
+
+- Solutions
+    - 503_1.cpp
+        - 每個元素都會 push 進去，總共會 push 2xN 次
+        - 需要檢查 pop 出來的是屬於「原本array的部分」還是「circular的部分」
+     
+    - 503_2.cpp
+        - 只有前 n 個元素會 push 進去
+            - 這樣仍然可以保證正確性
+     
+### LC 901. Online Stock Span
+- Resource Analysis
+    - Time: O(N)
+        - Ammortized Cost of "next(price)": O(1)
+      
+    - Space: O(N)
+
+- Tips
+    - 要定義 member variables
+        - nextId: 儲存下一個元素要放的位置
+            - 等同於 prices.size()
+             
+        - stack: 用來算 span 的 stack
+            - stack.size() <= prices.size()
+             
+        - prices: 用來儲存所有原始的 price 資料
+     
+    - 維護一個遞減的單調棧 (即 stack)
+        - 手法和 LC 739. Daily Temperatures 幾乎一樣
+    
+### LC 42. Trapping Rain Water
+- Resource Analysis
+    - Time: O(N)
+    - Space: O(1)
+
+- Tips
+    - 這題有很多解法，包含 DP、Monotonic Stack、Two Pointer 等等
+        - 其中 DP & Two Pointer 的核心精神是一樣的
+            - 核心精神
+                - 給定任一柱子，其上方能盛的水量 = min(leftMax, rightMax)
+                    - leftMax: 該柱子左邊最高柱子的高度
+                    - rightMax: 該柱子右邊最高柱子的高度
+
+            - DP:  
+                - Resource Analysis
+                    - Time: O(N)
+                    - Space: O(N)
+                
+                - Tips
+                    利用兩次 O(N) 的時間建立 leftMax、rightMax 的陣列，
+                    接下來就可以以 O(1) 的時間得到每個柱子上方能盛的水量
+
+            - Two Pointer: 
+                - Resource Analysis
+                    - Time: O(N)
+                    - Space: O(1) 
+                       
+                - Tips
+                    利用兩個 pointer: left & right 來 traverse，
+                    並使用 leftMax, rightMax 兩個數值來記錄目前左邊和右邊碰到的最大值
+
+                    分成兩個 case:
+                        1. leftMax > rightMax
+                            if left->val > leftMax: 
+                                - left上方不可能有水
+                                - 更新 leftMax
+                            else:
+                                - left 上方恰有 leftMax 量的水 
+
+                            final: 
+                                - left 往右移一格
+
+                        2. leftMax <= rightMax
+                            if right->val > rightMax: 
+                                - right上方不可能有水
+                                - 更新 rightMax
+                            else:
+                                - right 上方恰有 rightMax 量的水 
+
+                            final: 
+                                - left 往右移一格
+        
+        - Monotonic Stack 的做法就不贅述了，是這部分的重點，和前幾題的做法都差不多
+            - Monotonic Stack
+                - Resource Analysis
+                    - Time: O(N)
+                    - Space: O(N)
+                
+                - Tips  
+                    - 維護一個遞減的單調棧
+                    - 只需要注意實作上的細節
+                        - 每次 pop 出來 top的值時，要再看一次 stack.top() 拿到上上個高度，
+                          才能決定盛水量 
