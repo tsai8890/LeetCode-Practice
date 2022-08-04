@@ -15,6 +15,8 @@
     - 其它
         - length()
         - empty()
+        - clear()
+            - 清空字串
 
 ## std::vector
 - 用法
@@ -79,7 +81,7 @@
 
 ## std::pair
 - 宣告方法
-```C++=
+```C++
 #include <utility> // 包含 std::pair, std::make_pair
 pair<T1, T2> p;
 ```
@@ -94,7 +96,7 @@ pair<T1, T2> p;
  
 ## std::unordered_map
 - 宣告方法
-```C++=
+```C++
 unordered_map<KEY_T, VALUE_T> uMap; 
 ```
 
@@ -107,7 +109,7 @@ unordered_map<KEY_T, VALUE_T> uMap;
     
     - 遍歷
         - 使用 pair 遍歷
-        ```C++=
+        ```C++
             // Basic
             // Note: 不可以加 "&"，會出錯
             for (pair<KEY_T, VALUE_T> e: uMap) {
@@ -124,7 +126,7 @@ unordered_map<KEY_T, VALUE_T> uMap;
         ``` 
 
         - 使用 iterator 遍歷
-        ```C++=
+        ```C++
             // Basic - forLoop
             unordered_map<KEY_T< VALUE_T>>::iterator it;
             // 其實 "*it" 就是 pair<KEY_T, VALUE_T>
@@ -152,9 +154,9 @@ unordered_map<KEY_T, VALUE_T> uMap;
 ```
 
 - 宣告方法
-```C++=
+```C++
 // Most Important
-// C++ 的 priority queue 比較函數定義是反過來的
+// C++的 priority queue 比較函數定義是反過來的
 
 // Min-Heap
 priority_queue<T, vector<T>, greater<T>> pq; 
