@@ -46,7 +46,7 @@
         - 可用 deque[index] 隨機存取任一元素
         - front()
         - back()
-
+        
     - 其它
         - size()
         - empty()
@@ -60,6 +60,7 @@
     - 存取
         - front()
         - back()
+        - 不能直接使用 index 存取
 
     - 其它
         - size()
