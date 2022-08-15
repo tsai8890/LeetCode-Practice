@@ -30,6 +30,11 @@
         - 可用 front(), back() 存取頭尾
             - 是回傳 reference，可以直接修改
 
+    - slice
+        - 只能使用 vector<T> slice = vector<T>(vec.begin(), vec.end())
+            - begin 跟 end 可以換成不同位置的 iterator
+                - 就可以達到 slice 的效果
+
     - 其它
         - size()
         - empty()
