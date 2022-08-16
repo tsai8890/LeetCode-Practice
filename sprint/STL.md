@@ -31,7 +31,7 @@
             - 是回傳 reference，可以直接修改
 
     - slice
-        - 只能使用 vector<T> slice = vector<T>(vec.begin(), vec.end())
+        - 只能使用 vector<T> slice(vec.begin(), vec.end());
             - begin 跟 end 可以換成不同位置的 iterator
                 - 就可以達到 slice 的效果
 
@@ -177,7 +177,7 @@ public:
         return t1.val < t2.val;
     }
 }
-priority_queue<T, vector<T>, Compare> pq; 
+priority_queue<T, vector<T>, Compare()> pq; 
 ```
 
 - 用法
