@@ -36,15 +36,15 @@ public:
         }
         
         TreeNode* root = new TreeNode(postorder[post_end]);
-        int mid = pos[postorder[post_end]];
-        int leftNodes = mid - in_begin;
+        int rootPos = pos[postorder[post_end]];
+        int leftNodes = rootPos - in_begin;
         
         root->left = build(inorder, postorder,
-                           in_begin, mid-1,
+                           in_begin, rootPos-1,
                            post_begin, post_begin+leftNodes-1,
                            pos);
         root->right = build(inorder, postorder,
-                            mid+1, in_end,
+                            rootPos+1, in_end,
                             post_begin+leftNodes, post_end-1,
                             pos);
         return root;
