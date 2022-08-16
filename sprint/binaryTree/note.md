@@ -76,6 +76,7 @@
     - LC 513. Find Bottom Left Tree Value
      
 - 重建 binary tree (Divide & Conquer)
+    - LC 105. Construct Binary Tree from Preorder and Inorder Traversal
     - LC 106. Construct Binary Tree from Inorder and Postorder Traversal
     - LC 654. Maximum Binary Tree
     - LC 617. Merge Two Binary Trees
