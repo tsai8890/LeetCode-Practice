@@ -67,10 +67,20 @@
 - 總和
     - LC 404. Sum of Left Leaves
     - LC 112. Path Sum
+    - LC 113. Path Sum II
 
 - 路徑
     - LC 257. Binary Tree Paths
- 
+
+- 搜尋元素 (DFS or BFS)
+    - LC 513. Find Bottom Left Tree Value
+     
+- 重建 binary tree (Divide & Conquer)
+    - LC 106. Construct Binary Tree from Inorder and Postorder Traversal
+    - LC 654. Maximum Binary Tree
+    - LC 617. Merge Two Binary Trees
+        - 想法和「LC 100. Same Tree」幾乎一樣
+
 - Others (But important!!!)
     - LC 110. Balanced Binary Tree
     - LC 222. Count Complete Tree Nodes
