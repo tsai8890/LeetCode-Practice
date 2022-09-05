@@ -35,6 +35,7 @@
      
 - 必須練習的
     - Binary Tree 有關的題目，都要用 BFS & DFS 想過一遍
+    - BST & Binary Tree，很多都會用到 divide & conquer，要很熟練
 
 - 經典題型
 - Traversal 
@@ -78,6 +79,7 @@
 - 重建 binary tree (Divide & Conquer)
     - LC 105. Construct Binary Tree from Preorder and Inorder Traversal
     - LC 106. Construct Binary Tree from Inorder and Postorder Traversal
+    - LC 108. Convert Sorted Array to Binary Search Tree
     - LC 654. Maximum Binary Tree
     - LC 617. Merge Two Binary Trees
         - 想法和「LC 100. Same Tree」幾乎一樣
@@ -87,10 +89,20 @@
     - LC 222. Count Complete Tree Nodes
 
 - Binary Search Tree - Related
+    > 大部分最佳解都是 divide & conquer
+
     - LC 98. Validate Binary Search Tree
+    - LC 450. Delete Node in a BST
     - LC 530. Minimum Absolute Difference in BST
     - LC 501. Find Mode in Binary Search Tree
+    - LC 530. Minimum Absolute Difference in BST
+    - LC 538. Convert BST to Greater Tree
+    - LC 669. Trim a Binary Search Tree
     - LC 700. Search in a Binary Search Tree
+    - LC 701. Insert into a Binary Search Tree
 
 - Lowest Common Ancestor(非常重要)
+    - LC 235. Lowest Common Ancestor of a Binary Search Tree
     - LC 236. Lowest Common Ancestor of a Binary Tree
+
+
