@@ -163,6 +163,7 @@ unordered_map<KEY_T, VALUE_T> uMap;
 ```C++
 // Most Important
 // C++的 priority queue 比較函數定義是反過來的
+// 容器的結尾才是 C++ priority queue 的 top
 
 // Min-Heap
 priority_queue<T, vector<T>, greater<T>> pq; 
@@ -177,7 +178,7 @@ public:
         return t1.val < t2.val;
     }
 }
-priority_queue<T, vector<T>, Compare()> pq; 
+priority_queue<T, vector<T>, Compare> pq; 
 ```
 
 - 用法
