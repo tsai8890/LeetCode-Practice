@@ -8,6 +8,7 @@ LC 743, [Graph], [Shortest-Path], [Dijkstra]
 LC 1020, [DFS], [Graph], [UnionFind]
 LC 1254, [DFS], [Graph], [UnionFind]
 LC 1319, [DFS], [Graph], [UnionFind]
+LC 1334, [Graph], [Shortest-Path], [Floyd-Warshall]
 LC 1514, [Graph], [Shortest-Path], [Dijkstra]
 LC 1905, [DFS], [Graph], [UnionFind]
 
