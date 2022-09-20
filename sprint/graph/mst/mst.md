@@ -1,16 +1,9 @@
 # Minimum Spanning Tree
 ## 常見的 MST algorithm
 <html>
-<head>
-    <style>
-        table * {
-            text-align: center;
-        }
-    </style>
-</head>
 <body>
     <table style="text-align: center">
-        <thead>
+        <thead style="text-align: center">
             <tr>
                 <th>演算法</th>
                 <th>應用場景</th>
@@ -19,7 +12,7 @@
                 <th>空間複雜度</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody style="text-align: center">
             <tr>
                 <td>Kruskal's Algorithm</td>
                 <td>找出 MST 的和 / 建構 MST</td>
