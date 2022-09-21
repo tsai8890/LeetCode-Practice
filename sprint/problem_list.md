@@ -10,5 +10,6 @@ LC 1254, [DFS], [Graph], [UnionFind]
 LC 1319, [DFS], [Graph], [UnionFind]
 LC 1334, [Graph], [Shortest-Path], [Floyd-Warshall]
 LC 1514, [Graph], [Shortest-Path], [Dijkstra]
+LC 1584, [Graph], [MST]
 LC 1905, [DFS], [Graph], [UnionFind]
 
