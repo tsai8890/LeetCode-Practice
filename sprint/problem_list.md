@@ -1,6 +1,8 @@
+LC 49, [String], [Hash]
 LC 128, [UnionFind]
 LC 130, [DFS], [Graph], [UnionFind]
 LC 200, [DFS], [Graph], [UnionFind]
+LC 242, [String], [Hash]
 LC 547, [DFS], [Graph], [UnionFind]
 LC 648, [Graph], [UnionFind]
 LC 695, [DFS], [Graph], [UnionFind]
