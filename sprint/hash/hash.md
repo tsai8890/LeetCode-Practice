@@ -1,5 +1,9 @@
 # Hash 
 
+## Note
+1.  C++ 的 unordered 系列，包含 unordered_map, unordered_set 等等，
+    其底層實現都是使用 hash table
+
 ## Collision
 
 ### 處理方式
