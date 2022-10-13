@@ -5,17 +5,27 @@ class Solution {
 public:
     int maxProfit(vector<int>& prices) {
         int n = prices.size();
-        vector<vector<int>> dp(3, vector<int>(n, 0));
-
-        for (int k = 1; k <= 2; k ++) {
-            int maxVal = -100000;
-            for (int i = 0; i < n; i ++) {
-                if (i >= k*2-1) {
-                    maxVal = max(maxVal, -prices[i-1]+dp[k-1][i]);                
-                }
-                dp[k][i] = (i >= k*2-1) ? max(dp[k][i-1], prices[i]+maxVal) : 0;
-            }
+        vector<int> left(n);
+        vector<int> right(n);
+        
+        left[0] = INT_MIN;
+        int leftMin = INT_MAX;
+        for (int i = 1; i < n; i ++) {
+            leftMin = min(leftMin, prices[i-1]);
+            left[i] = max(left[i-1], prices[i]-leftMin);            
         }
-        return dp[2][n-1];
+        
+        right[n-1] = INT_MIN;
+        int rightMax = 0;
+        for (int i = n-2; i >= 0; i --) {
+            rightMax = max(rightMax, prices[i+1]);
+            right[i] = max(right[i+1], rightMax-prices[i]);
+        }
+        
+        int maxProfit = left[n-1];
+        for (int i = 1; i < n-2; i ++) {
+            maxProfit = max(maxProfit, left[i] + right[i+1]);
+        }
+        return max(maxProfit, 0);
     }
 };
