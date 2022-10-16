@@ -12,7 +12,7 @@ public:
         
         // dp[i][j][0]: 在第i天處於「買完第j次股票」時的最大利潤
         // dp[i][j][1]: 在第i天處於「賣完第j次股票」時的最大利潤
-        vector<vector<vector<int>>> dp(n, vector<vector<int>>(k, vector<int>(2)));
+        int dp[n][k][2];
         
         for (int i = 0; i < n; i ++) {
             for (int j = 0; j < k; j ++) {
