@@ -7,6 +7,7 @@
 [TwoPointer]
 [Greedy]
 [Hash]
+[LinkedList]
 
 ## Stack & Queue
 [Stack]
