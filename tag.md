@@ -25,4 +25,5 @@
 [MST]
 
 ## Special
+[SlidingWindow]
 [UnionFind]
