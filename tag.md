@@ -12,6 +12,7 @@
 ## Stack & Queue
 [Stack]
 [Queue]
+[PriorityQueue]
 [MonotonicStack]
 [MonotonicQueue]
 
@@ -25,4 +26,5 @@
 [MST]
 
 ## Special
+[SlidingWindow]
 [UnionFind]
