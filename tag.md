@@ -12,6 +12,7 @@
 ## Stack & Queue
 [Stack]
 [Queue]
+[PriorityQueue]
 [MonotonicStack]
 [MonotonicQueue]
 
